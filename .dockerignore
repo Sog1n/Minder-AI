@@ -1,0 +1,15 @@
+.git/
+.pytest_cache/
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+uvicorn.log
+uvicorn.err.log
+docs/
+tests/
+scripts/
+mysql_data/
+qdrant_data/
+

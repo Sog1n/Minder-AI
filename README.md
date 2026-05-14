@@ -222,6 +222,42 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8000
 - Dashboard: [http://127.0.0.1:8000](http://127.0.0.1:8000)
 - API docs: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
+## Docker Compose
+
+Run backend, MySQL, and Qdrant together:
+
+```bash
+docker compose up --build
+```
+
+Default Docker mode is offline demo mode:
+
+```env
+LLM_MODE=demo
+```
+
+To run with OpenAI-backed extraction, judge, embeddings, and answer generation, create a local `.env` file:
+
+```env
+LLM_MODE=openai
+OPENAI_API_KEY=sk-...
+```
+
+Then run:
+
+```bash
+docker compose up --build
+```
+
+Services:
+
+| Service | URL / Port |
+|---|---|
+| Backend dashboard | `http://127.0.0.1:8000` |
+| API docs | `http://127.0.0.1:8000/docs` |
+| MySQL | `localhost:3306` |
+| Qdrant REST | `http://127.0.0.1:6333` |
+
 ## Run Demo Scenario
 
 Start the server, then run:
@@ -303,4 +339,3 @@ This keeps the repository runnable without API keys while still showing how the 
 ## Repository
 
 GitHub: [https://github.com/Sog1n/Minder-AI](https://github.com/Sog1n/Minder-AI)
-
