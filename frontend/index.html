@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Minder AI Knowledge System</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <h1>Minder AI Knowledge System</h1>
+          <p>Technical demo: extraction, verification, SOP-first RAG, and learning metrics.</p>
+        </div>
+        <button id="refresh">Refresh</button>
+      </header>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Conversation Simulator</h2>
+          </div>
+          <label>
+            Worker
+            <select id="workerSelect"></select>
+          </label>
+          <label>
+            Transcript
+            <textarea id="transcript" rows="8">Station 3 always overheats after lunch on Tuesdays. I drop the current by 5% every time. The AI told me 3% but that is not enough.</textarea>
+          </label>
+          <div class="actions">
+            <button id="submitConversation">Submit</button>
+            <button id="runQuery">Ask Agent</button>
+          </div>
+          <pre id="conversationStatus"></pre>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Knowledge Browser</h2>
+            <select id="statusFilter">
+              <option value="">All</option>
+              <option>PENDING</option>
+              <option>VERIFIED</option>
+              <option>QUARANTINED</option>
+              <option>ESCALATED</option>
+              <option>REJECTED</option>
+              <option>SUPERSEDED</option>
+            </select>
+          </div>
+          <div id="knowledgeList" class="list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Conflict Viewer</h2>
+          </div>
+          <div id="conflictList" class="list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Learning Metrics</h2>
+          </div>
+          <div id="metrics" class="metrics"></div>
+          <h3>Agent Response</h3>
+          <pre id="agentResponse"></pre>
+        </article>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
+
